@@ -4,7 +4,14 @@ const contactController = require('../controller/contactcontroller');
 const userController = require('../controller/userController');
 const AI = require('../schema/AIModel');
 const toolController = require('../controller/toolController');
+const emailcontroler = require('../controller/emailcontroller');
+const reviewController = require('../controller/reviewcontroller');
 
+// Route to create a new review for a specific tool
+router.post('/tools/:toolId/reviews', reviewController.createReview);
+router.get('/tools/:toolId/reviews', reviewController.getReviewsByToolId);
+// POST route for creating a new email address
+router.post('/emails', emailcontroler.createEmail);
 router.post('/addTool', toolController.addTool);
 router.post("/login", userController.login);
 router.post('/signup', userController.signup);
@@ -15,6 +22,7 @@ router.put("/updatestatus/:id",userController.updatestatus);
 router.get("/getsignup", userController.getsignup);
 router.put('/ai/:id/updateFilter', toolController.updateFilter);
 router.put('/updatetoolstatus/:id', toolController.updateAIStatus);
+router.get('/contacts',contactController.getAllContacts)
 // Define route for '/AI'
 router.get('/AI', toolController.getAI);
 router.delete('/deleteTool/:toolId', toolController.deleteTool);

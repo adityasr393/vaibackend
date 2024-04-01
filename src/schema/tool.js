@@ -19,6 +19,14 @@ const toolSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  pricingPrice:{
+    type:String, 
+    
+  },
+  pricingType:{
+    type:String, 
+    
+  },
   firebaseImageUrl: {
     type: String,
     required: true
