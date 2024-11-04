@@ -5,7 +5,7 @@ const userController = require('../controller/userController');
 const AI = require('../schema/AIModel');
 const toolController = require('../controller/toolController');
 const emailcontroler = require('../controller/emailcontroller');
-// const reviewController = require('../controller/reviewcontroller');
+const reviewController = require('../controller/reviewcontroller');
 
 // Route to create a new review for a specific tool
 router.post('/tools/:toolId/reviews', reviewController.createReview);
