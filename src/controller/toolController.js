@@ -18,8 +18,11 @@ exports.addTool = async (req, res) => {
 
 exports.getAI = async (req, res) => {
   try {
-    const tools = await AI.find().maxTimeMS(30000);
+    const tools = await AI.find().maxTimeMS(300000);
     res.json(tools);
+    console.log(AI.collection.name);
+
+    console.log(tools);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server Error' });

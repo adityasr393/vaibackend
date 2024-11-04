@@ -9,14 +9,14 @@ const AISchema = new mongoose.Schema({
   category: String, // You can add or remove fields as needed
   firebaseImageUrl: String ,// Add field for Firebase Storage URL
   status:{
-    type:Boolean,
+    type:String,
     default:false
 },filter: {
   type: String,
   enum: ['new', 'popular', 'featured'], // Define enum values
   default: 'new' // Set default value to 'new'
 }
-}, { collection: 'your_collection_name' ,timestamps:true}); // Specify the collection name as 'AI'
+}, { collection: 'tools' ,timestamps:true}); // Specify the collection name as 'AI'
 
 const AI = mongoose.model('your_collection_name', AISchema);
 
