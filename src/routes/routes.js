@@ -10,6 +10,9 @@ const reviewController = require('../controller/reviewcontroller');
 // Route to create a new review for a specific tool
 router.post('/tools/:toolId/reviews', reviewController.createReview);
 router.get('/tools/:toolId/reviews', reviewController.getReviewsByToolId);
+router.put('/reviews/:id', reviewController.updateReviewById); // Update a review by ID
+router.delete('/reviews/:id', reviewController.deleteReviewById); // Delete a review by ID
+
 // POST route for creating a new email address
 router.post('/emails', emailcontroler.createEmail);
 router.post('/addTool', toolController.addTool);
